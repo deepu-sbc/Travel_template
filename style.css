@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    .josefin-sans-uniquifier {
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+      }
+      
+}
+.background-image{
+    width: 100%;
+    height: 150vh;
+    background-image: linear-gradient(rgba(228, 214, 214, 0.75),rgba(0,0,0,0.75)),url(images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0 0 10px #ccc;
+    background: rgba(161, 73, 121, 0.5);
+}
+#chk1{
+    display: none;
+}
+i{
+    color: #fff;
+    cursor: pointer;
+}
+header .logo{
+    flex: 1;
+    color: #fff;
+    margin-left: 50px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+header .search-box{
+    flex: 1;
+    position: relative;
+}
+.search-box input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #f2f2f2;
+    border-radius: 30px;
+    color: gray;
+    font-size: 16px;
+    text-align: center;
+    padding-right: 40px;
+    padding-left: 5px;
+}
+.search-box button{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    transform: scale(0.9);
+    background: green;
+}
+header ul{
+    flex: 3.0;
+    display: flex;
+    justify-content: space-evenly;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+header .menu{
+    font-size: 2.5em;
+    display: none;
+}
+@media(max-width:1000px){
+    .search-box button{
+        position: absolute;
+    }
+    header ul{
+        position: fixed;
+        top: 100px;
+        right: -100%;
+        background: rgba(0, 0, 0, 0.5);
+        height: calc(100vh - 100px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+    header .menu{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+    }
+}
+@media(max-width:600px){
+    header .logo{
+        font-size: 10px;
+        margin-left: 8px;
+    }
+    header ul{
+        width: 100%;
+    }
+}
+.explore{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(186, 190, 116);
+    box-shadow: 0 0 50px 20px rgb(129, 106, 106);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.heading{
+    text-align: center;
+    color: white;
+    line-height: 8rem;
+    font-size: clamp(1.5rem,0.7rem + 3vw,2rem);
+}
+.sub-heading{
+    width: 60%;
+    text-align: center;
+    color: white;
+    font-size: clamp(0.8rem,0.5rem + 2vw,1.5rem);
+}
+.explore .places{
+    margin-top: 20px;
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 1rem;
+    padding: 0 10px;
+    grid-template-columns: repeat(3,1fr);
+}
+.places .card{
+    border-radius: 10px;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+.places .card img{
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease-out;
+    background-color: rgb(158, 127, 81);
+}
+.places .cardcard3{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    padding: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: 0.2s linear;
+}
+.places .card:hover img{
+    scale: 1.1;
+}
+
+.footer_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5rem;
+    padding: 20px 10px;
+    color: black;
+}
+.footer_col h3{
+    font-size: 1.5rem;
+    font-weight: 600px;
+    margin-bottom: 2rem;
+}
+.footer_col h3 span{
+    color: white;
+}
+.footer_col p{
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.footer_col p:hover{
+    color: blueviolet;
+}
+.footer_col p span{
+    font-weight: 600;
+}
+.footer_col h4{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.footer_bar{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: red;
+    border-top: 1px solid white;
+}
+@media(968px > width){
+    .explore .places{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
